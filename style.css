@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:General Sans    ;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+#minicircle{
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute ;
+    border-radius: 50%;
+    z-index: 9999;
+    /* transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s; 
+     */
+     transition:  cubic-bezier(0.19, 1, 0.22, 1)1s;
+}
+
+.bounding{
+    width: fit-content;
+    overflow: hidden;
+}
+
+.bounding .boundingelem{
+    transform: translateY(100%);
+}
+
+#main{
+    width: 100%;  
+}
+
+#hero{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: #fff;
+}
+
+
+#nav{
+    width: 100%;
+    padding: 20px 40px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#heading{
+    margin-top: 45px;
+}
+
+#heading h1{
+    font-size: 9vw;
+    text-transform: uppercase ;
+    font-weight:500;
+    opacity: 0.6;
+    margin-left: 30px;
+}
+
+#heading #secondh1{
+    margin-left: 140px;
+}
+
+.blocktext{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: fit-content;
+}
+
+.blocktext h5{
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 1vw;
+}
+
+#chottiheading{
+    font-size: 1.5vw;
+    margin-top: 0.5vw;
+    padding-right:30px ;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+#chottiheading h5{
+    text-transform: uppercase;
+    text-align: right;
+}
+
+#herofooter{
+    padding: 0 2vw;
+    position: absolute;
+    bottom: 3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2vw;
+}
+
+#herofooter a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#herofooter .circle{
+    width: 30px;
+    height: 30px;
+    background-color: #888;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+#herofooter #iconset{
+    display: flex;
+    gap: 5px;
+}
+
+
+
+
+
+#second{
+    color: #fff;
+    width: 100%;
+    /* height: 100vh;  //use carefully  */
+    background-color: black;
+    padding-top: 180px;
+    padding-right: 10vw;
+}
+
+.elem{
+    width: 100%;
+    border-top: 1px solid #888;
+    padding: 3.5vw 3vw;
+    padding-right: 0;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    position: relative;
+}
+
+.elem h1{
+    text-transform: uppercase;
+    font-size: 6.5vw;
+}
+
+.elemsomos{
+    border-bottom: 1px solid #888;
+}
+
+/* image things  */
+.elem img{
+    /* display: none;  */
+    opacity: 0;
+    position: absolute;
+    z-index: 999;
+    height: 140%;
+}
+
+
+
+
+#about{
+    color: #fff ;
+    width: 100%;   
+    background-color: black; 
+    padding: 10vw 10vw;
+    padding-left: 35vw;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 50px;
+}
+
+
+#about img{
+    width: 220px;
+}
+
+#textabout{
+    width:25rem;
+}
+
+#textabout h5{
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+#textabout p{
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+#textabout a{
+    padding: 12px 22px;
+    border: 1px solid #fff;
+    border-radius: 100px;    
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#subscribe{
+    background-color: black;
+    color: white;
+    padding: 20px 30px;
+    padding-bottom: 12vw;
+}
+
+#subscribe h5{
+    text-transform: uppercase   ;
+    opacity: 0.6;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 30px;
+    background-color: black;
+    color: #fff;
+}
+
+#footerleft{
+    display: flex;
+    gap: 20px;
+
+}
+
+#footer a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+
+#footerright{
+    display: flex;
+    gap: 30px;
+}
