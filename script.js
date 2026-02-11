@@ -3,6 +3,26 @@ const scroll = new LocomotiveScroll({
     smooth: true
 });
 
+function handleDeviceNotice(){
+    var notice = document.querySelector("#deviceNotice");
+    var noticeBtn = document.querySelector("#deviceNoticeBtn");
+    if (!notice || !noticeBtn) return;
+
+    var isSmallScreen = window.matchMedia("(max-width: 900px)").matches;
+    if (isSmallScreen) {
+        notice.classList.add("is-visible");
+        notice.setAttribute("aria-hidden", "false");
+    } else {
+        notice.classList.remove("is-visible");
+        notice.setAttribute("aria-hidden", "true");
+    }
+
+    noticeBtn.onclick = function(){
+        notice.classList.remove("is-visible");
+        notice.setAttribute("aria-hidden", "true");
+    };
+}
+
 function firstPageAnim(){
     var tl=gsap.timeline();
     tl.from("#nav", {
@@ -29,7 +49,9 @@ function firstPageAnim(){
 }
 
 firstPageAnim();
+handleDeviceNotice();
 
+window.addEventListener("resize", handleDeviceNotice);
 
 
 function circleMouseFollower() {

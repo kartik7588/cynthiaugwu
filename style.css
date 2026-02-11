@@ -10,6 +10,60 @@ html, body{
     height: 100%;
 }
 
+body{
+    overflow-x: hidden;
+}
+
+.device-notice{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 24px;
+}
+
+.device-notice.is-visible{
+    display: flex;
+}
+
+.device-notice__card{
+    background: #0e0e0e;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 420px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+.device-notice__card h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.device-notice__card p{
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.85;
+    margin-bottom: 16px;
+}
+
+.device-notice__btn{
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
 #minicircle{
     width: 10px;
     height: 10px;
@@ -36,16 +90,21 @@ html, body{
 }
 
 #hero{
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    min-height: 100svh;
+    height: 100svh;
+    position: relative;
+    overflow: hidden;
     background-color: black;
     color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 
 #nav{
     width: 100%;
-    padding: 20px 40px;
+    padding: clamp(14px, 2vw, 20px) clamp(18px, 3vw, 40px);
     color: #fff;
     display: flex;
     align-items: center;
@@ -60,19 +119,19 @@ html, body{
 }
 
 #heading{
-    margin-top: 45px;
+    margin-top: clamp(18px, 4vw, 45px);
 }
 
 #heading h1{
-    font-size: 9vw;
+    font-size: clamp(44px, 9vw, 120px);
     text-transform: uppercase ;
     font-weight:500;
     opacity: 0.6;
-    margin-left: 30px;
+    margin-left: clamp(8px, 2.5vw, 30px);
 }
 
 #heading #secondh1{
-    margin-left: 140px;
+    margin-left: clamp(20px, 9vw, 140px);
 }
 
 .blocktext{
@@ -85,13 +144,13 @@ html, body{
 .blocktext h5{
     text-transform: uppercase;
     text-align: right;
-    font-size: 1vw;
+    font-size: clamp(11px, 1.1vw, 16px);
 }
 
 #chottiheading{
-    font-size: 1.5vw;
-    margin-top: 0.5vw;
-    padding-right:30px ;
+    font-size: clamp(12px, 1.6vw, 18px);
+    margin-top: clamp(6px, 0.8vw, 12px);
+    padding-right: clamp(12px, 3vw, 30px);
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -103,9 +162,9 @@ html, body{
 }
 
 #herofooter{
-    padding: 0 2vw;
+    padding: 0 clamp(18px, 3vw, 40px);
     position: absolute;
-    bottom: 3;
+    bottom: clamp(16px, 3vw, 36px);
     width: 100%;
     display: flex;
     align-items: center;
@@ -144,14 +203,14 @@ html, body{
     width: 100%;
     /* height: 100vh;  //use carefully  */
     background-color: black;
-    padding-top: 180px;
-    padding-right: 10vw;
+    padding-top: clamp(90px, 14vw, 180px);
+    padding-right: clamp(0px, 10vw, 10vw);
 }
 
 .elem{
     width: 100%;
     border-top: 1px solid #888;
-    padding: 3.5vw 3vw;
+    padding: clamp(18px, 3.5vw, 48px) clamp(18px, 3vw, 36px);
     padding-right: 0;
     opacity: 0.7;
     display: flex;
@@ -163,7 +222,7 @@ html, body{
 
 .elem h1{
     text-transform: uppercase;
-    font-size: 6.5vw;
+    font-size: clamp(22px, 6.5vw, 84px);
 }
 
 .elemsomos{
@@ -186,21 +245,21 @@ html, body{
     color: #fff ;
     width: 100%;   
     background-color: black; 
-    padding: 10vw 10vw;
-    padding-left: 35vw;
+    padding: clamp(40px, 10vw, 140px) clamp(18px, 10vw, 120px);
+    padding-left: clamp(18px, 35vw, 35vw);
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
-    gap: 50px;
+    gap: clamp(20px, 5vw, 50px);
 }
 
 
 #about img{
-    width: 220px;
+    width: clamp(160px, 22vw, 220px);
 }
 
 #textabout{
-    width:25rem;
+    width: min(25rem, 100%);
 }
 
 #textabout h5{
@@ -225,8 +284,8 @@ html, body{
 #subscribe{
     background-color: black;
     color: white;
-    padding: 20px 30px;
-    padding-bottom: 12vw;
+    padding: clamp(18px, 2vw, 30px) clamp(18px, 3vw, 30px);
+    padding-bottom: clamp(60px, 12vw, 140px);
 }
 
 #subscribe h5{
@@ -236,11 +295,15 @@ html, body{
     font-size: 14px;
 }
 
+#subscribe h3{
+    text-transform: uppercase;
+}
+
 #footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 30px;
+    padding: clamp(24px, 4vw, 40px) clamp(18px, 3vw, 30px);
     background-color: black;
     color: #fff;
 }
@@ -261,4 +324,176 @@ html, body{
 #footerright{
     display: flex;
     gap: 30px;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+    #nav{
+        padding: 16px 24px;
+    }
+
+    #heading h1{
+        font-size: 11vw;
+        margin-left: 18px;
+    }
+
+    #heading #secondh1{
+        margin-left: 80px;
+    }
+
+    .blocktext h5{
+        font-size: 1.8vw;
+    }
+
+    #chottiheading{
+        font-size: 2.2vw;
+        padding-right: 24px;
+    }
+
+    #herofooter{
+        padding: 0 24px;
+    }
+
+    #second{
+        padding-top: 140px;
+        padding-right: 6vw;
+    }
+
+    #about{
+        padding: 12vw 8vw;
+        padding-left: 8vw;
+        gap: 32px;
+    }
+
+    #textabout{
+        width: 100%;
+        max-width: 32rem;
+    }
+
+    #footerright{
+        gap: 18px;
+    }
+}
+
+@media (max-width: 600px){
+    #hero{
+        min-height: 100svh;
+        height: 100svh;
+        padding-bottom: 18px;
+        overflow: hidden;
+    }
+
+    #nav{
+        padding: 14px 18px;
+    }
+
+    #nav a{
+        font-size: 16px;
+    }
+
+    #heading{
+        margin-top: 22px;
+    }
+
+    #heading h1{
+        font-size: clamp(36px, 13.5vw, 60px);
+        margin-left: 6px;
+    }
+
+    #heading #secondh1{
+        margin-left: 20px;
+    }
+
+    .blocktext{
+        align-items: flex-start;
+    }
+
+    .blocktext h5{
+        text-align: left;
+        font-size: clamp(10px, 3.6vw, 13px);
+    }
+
+    #chottiheading{
+        font-size: clamp(11px, 3.8vw, 14px);
+        padding: 0 18px;
+        align-items: flex-start;
+        margin-top: 12px;
+        gap: 6px;
+    }
+
+    #chottiheading h5{
+        text-align: left;
+    }
+
+    #herofooter{
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 18px;
+        margin-top: auto;
+    }
+
+    #herofooter a{
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    #herofooter #iconset{
+        align-self: flex-start;
+    }
+
+    #second{
+        padding-top: 48px;
+        padding-right: 0;
+    }
+
+    .elem{
+        padding: 18px 18px;
+        gap: 10px;
+    }
+
+    .elem h1{
+        font-size: 7.8vw;
+    }
+
+    .elem h5{
+        font-size: 12px;
+    }
+
+    #about{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    #about img{
+        width: 180px;
+    }
+
+    #textabout{
+        width: 100%;
+    }
+
+    #subscribe{
+        padding: 20px 18px;
+        padding-bottom: 14vw;
+    }
+
+    #subscribe h3{
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    #footer{
+        padding: 28px 18px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    #footerright{
+        flex-wrap: wrap;
+        gap: 14px 18px;
+    }
 }
